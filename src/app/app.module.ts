@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    TemplateDrivenFormComponentComponent
   ],
   imports: [
     BrowserModule,
