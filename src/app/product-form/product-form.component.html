@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="productId">Id</label>
+        <input formControlName="id" type="number" class="form-control" id="productId" placeholder="Enter id">
+        <div *ngIf="submitted && form.get('id')!.errors && form.get('id')!.errors!.required" class="invalid-feedback">
+            Id is required!
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="productTitle">Title</label>
+        <input formControlName="title" type="text" class="form-control" id="productTitle" placeholder="Enter title">
+        <div *ngIf="submitted && form.get('title')!.errors && form.get('title')!.errors!.required" class="invalid-feedback">
+            Title is required!
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="productQuantity">Quantity</label>
+        <input formControlName="quantity" type="number" class="form-control" id="productQuantity"
+            placeholder="Enter Quantity">
+            <div *ngIf="submitted && form.get('quantity')!.errors && form.get('quantity')!.errors!.required" class="invalid-feedback">
+                Quantity is required!.
+            </div>
+            <div *ngIf="submitted && form.get('quantity')!.errors && form.get('quantity')!.errors!.min" class="invalid-feedback">
+                Quantity must be >= {{ form.get('quantity')!.errors!.min.min }} but you provided {{ form.get('quantity')!.errors!.min.actual }}
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productPrice">Price</label>
+        <input formControlName="price" type="number" class="form-control" id="productPrice" placeholder="Enter Price">
+        <div *ngIf="submitted && form.get('price')!.errors && form.get('price')!.errors!.required" class="invalid-feedback">
+            Price is required!
+        </div>
+    </div>
+    <button (click)="save()" type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+<form>
+    <div class="form-group">
+        <input type="number" name="pricemax" class="form-control col-md-6" [(ngModel)]="maxPrice">
+    </div>
+</form>
+
+<div class="row">
+    <app-product *ngFor="let p of listProducts;"
+     [product]="p"
+      [priceMaxInput]=" maxPrice"
+      (incrementEvent)="incrementlike($event)"
+      (incrementEvent)="decrementQuantity($event)"></app-product>
+   
+</div>
