@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/Products';
+import { StatCalculService } from '../services/stat-calcul.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
   listProducts!: Product[];
   maxPrice: number = 500;
   statValue!: number;
-  constructor() {
+  constructor(private calcul: StatCalculService) {
   }
 
   ngOnInit(): void {
