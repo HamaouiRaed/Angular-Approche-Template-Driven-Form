@@ -9,6 +9,7 @@ import { Product } from '../models/Products';
 export class HomeComponent implements OnInit {
   listProducts!: Product[];
   maxPrice: number = 500;
+  statValue!: number;
   constructor() {
   }
 
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
       { id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0 },
     ];
     console.log(this.listProducts);
+    this.statValue = 0;
   }
   incrementlike(product: Product) {
     let i = this.listProducts.indexOf(product);
@@ -31,7 +33,6 @@ export class HomeComponent implements OnInit {
     if (this.listProducts[i].quantity > 0) {
       this.listProducts[i].quantity--;
     }
-
-
   }
+
 }
