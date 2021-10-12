@@ -6,11 +6,13 @@ import { StatCalculService } from '../services/stat-calcul.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
+
 })
 export class HomeComponent implements OnInit {
   listProducts!: Product[];
   maxPrice: number = 500;
   statValue!: number;
+  n: number = 0;
   constructor(private calcul: StatCalculService) {
   }
 
@@ -35,12 +37,17 @@ export class HomeComponent implements OnInit {
       this.listProducts[i].quantity--;
     }
   }
-getstat(){
-  for(let i in this.listProducts){
-    if( this.listProducts[i].quantity===0){
-      this.statValue++;
+  getstat() {
+    for (let i in this.listProducts) {
+      if (this.listProducts[i].quantity === 0) {
+        this.statValue++;
+      }
+    }
+  }
+    getStatService(){
+
+      this.statValue = this.calcul.getStat(this.listProducts, 'quantity', 0);
+
     }
   }
 
-}
-}

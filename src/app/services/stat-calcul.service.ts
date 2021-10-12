@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getHeapStatistics } from 'v8';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +7,11 @@ import { getHeapStatistics } from 'v8';
 export class StatCalculService {
 
   constructor() { }
-  getStat(list: any[], creteria: string, value: any): number {
+
+  getStat(list: any[], criteria: string, value: any): number {
     let n = 0;
     for (let i in list) {
-      if (list[i][creteria] === value) {
+      if (list[i] [criteria] === value) {
         n++;
       }
     }
