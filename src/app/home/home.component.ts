@@ -34,5 +34,12 @@ export class HomeComponent implements OnInit {
       this.listProducts[i].quantity--;
     }
   }
+getstat(){
+  for(let i in this.listProducts){
+    if( this.listProducts[i].quantity===0){
+      this.statValue++;
+    }
+  }
 
+}
 }
